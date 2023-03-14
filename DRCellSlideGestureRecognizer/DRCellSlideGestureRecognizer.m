@@ -75,8 +75,9 @@ void safeFor(id arrayOrObject, void (^forBlock)(id object)) {
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
 	CGPoint velocity = [self velocityInView:self.view];
-	
-	return fabs(velocity.x) > fabs(velocity.y);
+	CGPoint point = [gestureRecognizer locationInView:self.view];
+
+	return fabs(velocity.x) > fabs(velocity.y) && point.x > self.leftActionStartPosition;
 }
 
 - (void)handlePan {
