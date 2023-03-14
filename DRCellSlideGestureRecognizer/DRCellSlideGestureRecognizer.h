@@ -12,6 +12,8 @@
 
 @interface DRCellSlideGestureRecognizer : UIPanGestureRecognizer <UIGestureRecognizerDelegate>
 
+@property (nonatomic, assign) CGFloat leftActionStartPosition;
+
 - (void)addActions:(id)actions;
 
 @end
